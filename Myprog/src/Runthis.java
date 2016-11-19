@@ -3,6 +3,9 @@
 	import java.awt.BorderLayout;
 	import java.awt.Dimension;
 	import java.awt.Rectangle;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -31,7 +34,7 @@ import java.util.ArrayList;
 	import com.ib.controller.Types.NewsType;
 	
 	
-public class Runthis implements IConnectionHandler {
+public class Runthis implements IConnectionHandler, MouseListener {
 	
 	static { NewLookAndFeel.register(); }
 	static Runthis INSTANCE = new Runthis();
@@ -44,7 +47,7 @@ public class Runthis implements IConnectionHandler {
 	
 
 
-	public static void main(String[] args) throws ClassNotFoundException, InterruptedException, SQLException {
+	public static void main(String[] args)  throws ClassNotFoundException, InterruptedException, SQLException  {
 		// TODO Auto-generated method stub
 		INSTANCE.run();
 		
@@ -62,11 +65,26 @@ public class Runthis implements IConnectionHandler {
 		
 		
 		m_tabbedPanel.addTab("Trade", new Tradespanel());
-		frame.add(m_tabbedPanel);
-		frame.setSize(512, 384);
+		frame.setSize(384, 288);
+		frame.add(m_tabbedPanel,-1);
 		//frame.setSize(m_tabbedPanel.getWidth(), m_tabbedPanel.getHeight());
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		
+//		frame.addMouseListener(new MouseAdapter()
+//			{
+//				public void mousePressed(MouseEvent e)
+//				{
+//					System.out.println(e.getX());
+//					System.out.println(e.getY());
+//					
+//				}
+//			
+//			});
+	
+		
 		
 		
 		
@@ -119,6 +137,46 @@ public class Runthis implements IConnectionHandler {
 
 	@Override
 	public void show(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}

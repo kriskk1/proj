@@ -1,6 +1,8 @@
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,11 +18,14 @@ public class Tradespanel extends JPanel {
 	
 	public Tradespanel(){
 		
-		this.setSize(1024, 768);
+		//this.setSize(1024, 768);
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		//c.fill = GridBagConstraints.BOTH;
-		c.fill=GridBagConstraints.HORIZONTAL;
+		//c.fill=GridBagConstraints.HORIZONTAL;
+		c.weighty = 1;
+		c.weightx = 1;
+		//c.anchor = GridBagConstraints.NORTHWEST;
 		
 	
 		
@@ -56,6 +61,17 @@ public class Tradespanel extends JPanel {
 		c.gridy=0;
 		c.ipadx=25;
 		this.add(asklable,c);
+		
+		addMouseListener(new MouseAdapter()
+		{
+			public void mousePressed(MouseEvent e)
+			{
+				System.out.println(e.getX());
+				System.out.println(e.getY());
+				
+			}
+		
+		});
 		
 		
 		
